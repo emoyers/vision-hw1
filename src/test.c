@@ -343,13 +343,6 @@ void test_sobel(){
     free(res);
 }
 
-void test_mytest(){
-    image im = load_image("data/dogsmall.jpg");
-    printf("%d, %d\n", im.w, im.h);
-    nn_resize(im, im.w*4, im.h*4);
-    TEST('1' == '1');
-}
-
 int do_test()
 {
     TEST('1' == '1');
@@ -367,7 +360,7 @@ void run_tests()
     test_rgb_to_hsv();
     test_hsv_to_rgb();
     test_nn_resize();
-    /*test_bl_resize();
+    test_bl_resize();
     test_multiple_resize();
     test_gaussian_filter();
     test_sharpen_filter();
@@ -377,8 +370,7 @@ void run_tests()
     test_gaussian_blur();
     test_hybrid_image();
     test_frequency_image();
-    test_sobel();*/
-    test_mytest();
+    test_sobel();
     printf("%d tests, %d passed, %d failed\n", tests_total, tests_total-tests_fail, tests_fail);
 }
 
